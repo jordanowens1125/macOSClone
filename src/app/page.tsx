@@ -16,10 +16,10 @@ export default function Home() {
       />
       <Nav />
       <div className="bottom">
-        <Calculator />
-        <Calendar />
+        {/* <Calculator /> */}
+        {/* <Calendar /> */}
         {/* <Weather /> */}
-        <Wallpaper />
+        {/* <Wallpaper /> */}
         <Apps />
       </div>
     </main>

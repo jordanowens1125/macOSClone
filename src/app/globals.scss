@@ -1,0 +1,106 @@
+:root {
+  --system-bg: hsla(240, 4%, 11%, 0.3);
+  --system-bg-2: hsla(240, 4%, 11%, 0.6);
+  --system-color: red;
+  --border-color: rgba(255, 255, 255, 0.308);
+  --textColor: #fff;
+  --radius: 12px;
+  --bg-img: url("https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp");
+  --window-bg-color: #1a1515;
+  --calculator-bg-color: #454545b3;
+  --calculator-orange: #f1a03b;
+  --calculator-button-color: #73737399;
+  --calculator-top-row-color: #59595999;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+
+  main {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  .bottom {
+    position: relative;
+  }
+  nav {
+    z-index: 999;
+  }
+  .background {
+    z-index: -1;
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.b-bottom {
+  border-bottom: 1px rgba(255, 255, 255, 0.308) solid;
+}
+
+.b-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.308);
+}
+
+img{
+  height: auto;
+  width: 100%;
+}
+
+.window {
+  position: absolute;
+  border: 1px solid var(--border-color);
+  background-color: var(--window-bg-color);
+  top: 10%;
+  right: 0;
+  bottom: 15%;
+  border-radius: var(--radius);
+  left: 50%;
+  transform: translate(-50%, 0%);
+  overflow: hidden;
+  overflow-y: auto;
+  height: fit-content;
+  width: fit-content;
+  color: var(--textColor);
+  display: flex;
+  flex-direction: column;
+  .app {
+    overflow-y: auto;
+    height: 100%;
+    padding: 1rem;
+    color: inherit;
+  }
+  &.full {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: unset;
+    z-index: 999;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    // border-bottom: 1px solid var(--border-color);
+    padding: 10px 8px;
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

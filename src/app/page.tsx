@@ -17,9 +17,9 @@ export default function Home() {
       <Nav />
       <div className="bottom">
         <Calculator />
-        {/* <Calendar /> */}
-        {/* <Weather /> */}
-        {/* <Wallpaper /> */}
+        <Calendar />
+        <Weather />
+        <Wallpaper />
         <Apps />
       </div>
     </main>

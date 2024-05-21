@@ -6,12 +6,13 @@ https://gianlucajahn.github.io/macOS-react/
 -animations
 -light mode/dark mode
 -Windows - Apps
-    opening and closing apps
+    white dot when app is open or active
     moving/dragging apps
         prevent them from being drug off screen
-    calendar
-    calculator
-    weather app
+    functionality
+        calendar
+        calculator
+        weather app
 -Loading screen
 -Scroll styling
 

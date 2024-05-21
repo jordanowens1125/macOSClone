@@ -12,7 +12,8 @@
   overflow-y: auto;
   width: fit-content;
   color: var(--textColor);
-  display: flex;
+  display: none;
+  // display: flex; changed with js
   flex-direction: column;
   .app {
     overflow-y: auto;

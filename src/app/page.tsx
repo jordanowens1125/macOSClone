@@ -16,7 +16,7 @@ export default function Home() {
       />
       <Nav />
       <div className="bottom">
-        {/* <Calculator /> */}
+        <Calculator />
         {/* <Calendar /> */}
         {/* <Weather /> */}
         {/* <Wallpaper /> */}

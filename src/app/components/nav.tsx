@@ -3,7 +3,7 @@ import SYSTEMCOLORS from "../constants/systemColors";
 import "./nav.scss";
 
 export default function Nav() {
-  const changeSettingsColor = (color) => {
+  const changeSettingsColor = (color:string) => {
     document.documentElement.style.setProperty(
       "--system-color",
       `hsl(${color})`

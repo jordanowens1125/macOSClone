@@ -5,21 +5,26 @@ https://gianlucajahn.github.io/macOS-react/
 
 -animations
 -light mode/dark mode
--notch toggle
 -Windows - Apps
     opening and closing apps
     moving/dragging apps
         prevent them from being drug off screen
-    minimizing apps
     calendar
     calculator
     weather app
-    wallpapers
-        - Add dark/light mode for each image
-    When i click on element change z index to higher than all else??
 -Loading screen
 -Scroll styling
+
+
+Later
 -vscode???
+-wallpapers
+        - Add dark/light mode for each image
+-When i click on element change z index to higher than all else??
+-notch toggle
+ 
+
+
 
 # dependencies
 /node_modules

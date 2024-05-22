@@ -4,11 +4,12 @@ import PlusMinusSvgComponent from "../icons/plusminus";
 import "./calculator.scss";
 import Windowcomponent from "./window";
 
-export default function Calculator() {
+export default function Calculator({ iconImg, index }) {
   return (
     <Windowcomponent
-      header={""}
+      header={"Calculator"}
       classname={"calculator"}
+      iconImg={iconImg}
       Component={
         <div className="app">
           <p className="number">0</p>

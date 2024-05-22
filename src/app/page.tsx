@@ -19,7 +19,7 @@ export default function Home() {
         <Calculator />
         <Calendar />
         <Weather />
-        <Wallpaper />
+        {/* <Wallpaper /> */}
         <Apps />
       </div>
     </main>

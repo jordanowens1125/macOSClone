@@ -1,11 +1,12 @@
 import "./calendar.scss";
 import Windowcomponent from "./window";
 
-export default function Calendar() {
+export default function Calendar({ iconImg, index }) {
   return (
     <Windowcomponent
       header={"Calendar"}
       classname={"calendar"}
+      iconImg={iconImg}
       Component={
         <div className="app">
           <span className="top-calendar">

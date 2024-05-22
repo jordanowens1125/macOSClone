@@ -1,16 +1,18 @@
 "use client";
 import "./apps.scss";
+import Calculator from "./calculator";
+import Calendar from "./calendar";
+import Wallpaper from "./wallpapers";
+import Weather from "./weather";
 
-const WALLPAPERS = "wallpapers";
-const CALENDAR = "calendar";
-const CALCULATOR = "calculator";
-const WEATHER = "weather";
+const WALLPAPERS = "apps-imgs/2.webp";
+const CALENDAR = "apps-imgs/4.webp";
+const CALCULATOR = "apps-imgs/3.webp";
+const WEATHER = "apps-imgs/6.png";
 
 export default function Apps() {
-  const displayCorrespondingWindow = (elementID) => {
-    const el = document.getElementById(elementID);
-    el.style.display = "flex";
-  };
+  let index = 1;
+
   return (
     <div className="apps">
       <span>
@@ -18,46 +20,10 @@ export default function Apps() {
         <img src="apps-imgs/1.webp" alt="" draggable="false" />
         <div></div>
       </span>
-      <span className="b-left">
-        <p>Wallpapers</p>
-        <img
-          src="apps-imgs/2.webp"
-          alt=""
-          draggable="false"
-          onClick={() => displayCorrespondingWindow(WALLPAPERS)}
-        />
-        <div></div>
-      </span>
-      <span>
-        <p>Calculator</p>
-        <img
-          src="apps-imgs/3.webp"
-          alt=""
-          draggable="false"
-          onClick={() => displayCorrespondingWindow(CALCULATOR)}
-        />
-        <div></div>
-      </span>
-      <span>
-        <p>Calendar</p>
-        <img
-          src="apps-imgs/4.webp"
-          alt=""
-          draggable="false"
-          onClick={() => displayCorrespondingWindow(CALENDAR)}
-        />
-        <div></div>{" "}
-      </span>
-      <span>
-        <p>Weather</p>
-        <img
-          src="apps-imgs/6.png"
-          alt=""
-          draggable="false"
-          onClick={() => displayCorrespondingWindow(WEATHER)}
-        />
-        <div></div>
-      </span>
+      <Wallpaper iconImg={WALLPAPERS} index={index} />
+      <Calculator iconImg={CALCULATOR} index={index} />
+      <Calendar iconImg={CALENDAR} index={index} />
+      <Weather iconImg={WEATHER} index={index} />
       <span className="b-left">
         <p>VSCode</p>
         <img src="apps-imgs/5.webp" alt="" draggable="false" />

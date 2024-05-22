@@ -5,7 +5,7 @@ import { DYNAMICBACKGROUNDS } from "../constants/backgrounds";
 import "./wallpapers.scss";
 import Windowcomponent from "./window";
 
-export default function Wallpaper() {
+export default function Wallpaper({ iconImg, index }) {
   const [current, setCurrent] = useState(DYNAMICBACKGROUNDS[8]);
   const setImage = (bg) => {
     const bgEl = document.getElementById("background");
@@ -13,40 +13,42 @@ export default function Wallpaper() {
     setCurrent(bg);
   };
   return (
-    <Windowcomponent
-      header={"Wallpapers"}
-      classname={"wallpapers"}
-      Component={
-        <div className="app">
-          <div className="current-wallpaper">
-            <img src={current.image} alt={current.name} />
-            <p className="item-h">{current.name}</p>
-            <p>{current.type}</p>
-          </div>
+    <>
+      <Windowcomponent
+        header={"Wallpapers"}
+        classname={"wallpapers"}
+        iconImg={iconImg}
+        Component={
+          <div className="app">
+            <div className="current-wallpaper">
+              <img src={current.image} alt={current.name} />
+              <p className="item-h">{current.name}</p>
+              <p>{current.type}</p>
+            </div>
 
-          <div className="dynamic">
-            <p className="title">Dynamic Wallpapers</p>
-            {DYNAMICBACKGROUNDS.map((bg) => {
-              return (
-                <div
-                  className={
-                    bg.image === current.image
-                      ? "wallpaper active"
-                      : "wallpaper"
-                  }
-                  key={bg.name}
-                >
-                  <img
-                    src={bg.image}
-                    alt={bg.name}
-                    onClick={() => setImage(bg)}
-                  />
-                  <p>{bg.name}</p>
-                </div>
-              );
-            })}
-          </div>
-          {/* 
+            <div className="dynamic">
+              <p className="title">Dynamic Wallpapers</p>
+              {DYNAMICBACKGROUNDS.map((bg) => {
+                return (
+                  <div
+                    className={
+                      bg.image === current.image
+                        ? "wallpaper active"
+                        : "wallpaper"
+                    }
+                    key={bg.name}
+                  >
+                    <img
+                      src={bg.image}
+                      alt={bg.name}
+                      onClick={() => setImage(bg)}
+                    />
+                    <p>{bg.name}</p>
+                  </div>
+                );
+              })}
+            </div>
+            {/* 
         <div className="standalone">
           <p className="title">Standalone Wallpapers</p>
           <div className="wallpaper">
@@ -85,8 +87,9 @@ export default function Wallpaper() {
             <p>Ventura</p>
           </div>
         </div> */}
-        </div>
-      }
-    />
+          </div>
+        }
+      />
+    </>
   );
 }

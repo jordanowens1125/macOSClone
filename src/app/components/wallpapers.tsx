@@ -5,7 +5,7 @@ import { DYNAMICBACKGROUNDS } from "../constants/backgrounds";
 import "./wallpapers.scss";
 import Windowcomponent from "./window";
 
-export default function Wallpaper({ iconImg, index }) {
+export default function Wallpaper({ index, setIndex, close }) {
   const [current, setCurrent] = useState(DYNAMICBACKGROUNDS[8]);
   const setImage = (bg) => {
     const bgEl = document.getElementById("background");
@@ -17,7 +17,9 @@ export default function Wallpaper({ iconImg, index }) {
       <Windowcomponent
         header={"Wallpapers"}
         classname={"wallpapers"}
-        iconImg={iconImg}
+        index={index}
+        setIndex={setIndex}
+        close={close}
         Component={
           <div className="app">
             <div className="current-wallpaper">

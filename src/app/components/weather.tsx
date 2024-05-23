@@ -1,12 +1,14 @@
 import "./weather.scss";
 import Windowcomponent from "./window";
 
-export default function Weather({ iconImg, index }) {
+export default function Weather({ index, setIndex, close }) {
   return (
     <Windowcomponent
       header={"Weather"}
       classname={"weather"}
-      iconImg={iconImg}
+      index={index}
+      setIndex={setIndex}
+      close={close}
       Component={
         <div className="app">
           <div className="top">

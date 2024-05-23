@@ -1,5 +1,4 @@
 .calendar {
-  width: fit-content;
   height: fit-content;
   .app {
     display: grid;
@@ -26,7 +25,7 @@
       }
       .dates {
         margin-top: 8px;
-        border: 1px solid #fff;
+        border-top: 1px solid #fff;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 1px;
@@ -54,6 +53,10 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          opacity: 0.7;
+          &.active {
+            opacity: 1;
+          }
         }
       }
     }

@@ -4,15 +4,12 @@ import "./window.scss";
 export default function Windowcomponent({
   Component,
   header,
-  classname,
-  iconImg,
-  spanClasses,
   index,
+  classname,
+  close,
 }) {
   const [full, setFull] = useState(false);
-  const [show, setShow] = useState(false);
-  const [used, setUsed] = useState(false);
-  const [diffPos, setDiffPos] = useState({ diffX: "50px", diffY: "10px" });
+  const [diffPos, setDiffPos] = useState({ diffX: "30%", diffY: "15%" });
 
   const onDragStart = (ev) => {
     var hideDragImage = ev.target.cloneNode(true);
@@ -55,57 +52,38 @@ export default function Windowcomponent({
     }
   };
 
-  const handleClick = () => {
-    setUsed(true);
-    setShow(true);
-  };
-  const handleClose = () => {
-    setShow(false);
-    setUsed(false);
-  };
-
   return (
     <>
-      {show && (
+      <div
+        id={classname}
+        className={full ? "full draggable" : "draggable"}
+        style={
+          full
+            ? { zIndex: 1000 }
+            : { top: diffPos.diffY, left: diffPos.diffX, zIndex: index }
+        }
+      >
         <div
-          id={classname}
-          className={full ? "full draggable" : "draggable"}
-          style={
-            full
-              ? { zIndex: index }
-              : { top: diffPos.diffY, left: diffPos.diffX, zIndex: index }
-          }
+          className={full ? `window ${classname} full` : `window ${classname}`}
         >
           <div
-            className={
-              full ? `window ${classname} full` : `window ${classname}`
-            }
+            className="header"
+            id="header"
+            onDrag={onDrag}
+            draggable={true}
+            onDragEnd={onDragEnd}
+            onDragStart={onDragStart}
           >
-            <div
-              className="header"
-              id="header"
-              onDrag={onDrag}
-              draggable={true}
-              onDragEnd={onDragEnd}
-              onDragStart={onDragStart}
-            >
-              <div className="actions">
-                <button onClick={handleClose}>Red</button>
-                <button>Yellow</button>
-                <button onClick={() => setFull(!full)}>Green</button>
-              </div>
-              <p>{header}</p>
+            <div className="actions">
+              <button onClick={close}>Red</button>
+              <button>Yellow</button>
+              <button onClick={() => setFull(!full)}>Green</button>
             </div>
-            {Component}
+            <p>{header}</p>
           </div>
+          {Component}
         </div>
-      )}
-
-      <span className={spanClasses}>
-        <p>{header}</p>
-        <img src={iconImg} alt="" onClick={handleClick} />
-        {used && <div></div>}
-      </span>
+      </div>
     </>
   );
 }

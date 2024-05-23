@@ -1,20 +1,49 @@
+"use client";
+import { useState } from "react";
 import "./calendar.scss";
 import Windowcomponent from "./window";
+import {
+  getLastMonthEndDate,
+  getMonthDates,
+  getNextMonthDate,
+} from "../helper/dates";
 
-export default function Calendar({ iconImg, index }) {
+export default function Calendar({ index, setIndex, close }) {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [dates, setDates] = useState(getMonthDates(currentDate));
+  console.log(dates);
+  const prevMonth = () => {
+    let newDate = getLastMonthEndDate(currentDate);
+    setCurrentDate(newDate);
+    setDates(getMonthDates(newDate));
+  };
+  const nextMonth = () => {
+    let newDate = getNextMonthDate(currentDate);
+    setCurrentDate(newDate);
+    setDates(getMonthDates(newDate));
+  };
+  const handleToday = () => {
+    const today = new Date();
+    setCurrentDate(today);
+    setDates(getMonthDates(today));
+  };
   return (
     <Windowcomponent
       header={"Calendar"}
       classname={"calendar"}
-      iconImg={iconImg}
+      index={index}
+      setIndex={setIndex}
+      close={close}
       Component={
         <div className="app">
           <span className="top-calendar">
-            <b>April 2024</b>
+            <b>{`${currentDate.toLocaleString("default", {
+              month: "long",
+            })} ${currentDate.getFullYear()}`}</b>
             <div className="calendar-actions">
-              <button>Left</button>
-              <button>Today</button>
-              <button>Right</button>
+              <button onClick={prevMonth}>Left</button>
+              <button onClick={handleToday}>Today</button>
+              <button onClick={nextMonth}>Right</button>
             </div>
           </span>
           <div className="bottom-calendar">
@@ -29,132 +58,16 @@ export default function Calendar({ iconImg, index }) {
             </div>
 
             <div className="dates">
-              <div className="date current">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
-              <div className="date">
-                <span>1</span>
-              </div>
+              {dates.map((date) => {
+                return (
+                  <div
+                    className={date.today ? "current date" : "date"}
+                    key={`${date.date} ${date.month}`}
+                  >
+                    <span className={date.activeMonth ? "active" : ""}>{date.date}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@
   top: 10%;
   left: 50%;
   width: fit-content;
+  z-index: 1;
 }
 
 
@@ -30,16 +31,16 @@
   // display: flex; changed with js
   flex-direction: column;
   transition: 0.5s;
-  z-index: -1;
+  z-index: 1;
   &.top-window {
     z-index: 20;
   }
   &.full {
     width: 100vw;
     height: 100%;
-    .app {
-      overflow: hidden;
-    }
+    // .app {
+    //   overflow: hidden;
+    // }
   }
   .app {
     overflow: hidden;

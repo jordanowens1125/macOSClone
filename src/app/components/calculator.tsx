@@ -1,15 +1,18 @@
+"use client";
 import DivideSvgComponent from "../icons/divide";
 import MultiplySvgComponent from "../icons/multiply";
 import PlusMinusSvgComponent from "../icons/plusminus";
 import "./calculator.scss";
 import Windowcomponent from "./window";
 
-export default function Calculator({ iconImg, index }) {
+export default function Calculator({ index, setIndex, close }) {
   return (
     <Windowcomponent
       header={"Calculator"}
       classname={"calculator"}
-      iconImg={iconImg}
+      index={index}
+      setIndex={setIndex}
+      close={close}
       Component={
         <div className="app">
           <p className="number">0</p>

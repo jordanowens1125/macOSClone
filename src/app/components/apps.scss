@@ -1,6 +1,15 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 1%;
+  z-index: 999;
+  position: relative;
+}
+
 .apps {
-  margin: auto;
-  margin-top: 0%;
+  height: fit-content;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -26,7 +35,7 @@
       border-radius: 50%;
       background-color: var(--textColor);
       aspect-ratio: 1;
-      height: 5px;
+      height: 0.5vh;
       margin: auto;
     }
     p {
@@ -49,6 +58,11 @@
   img {
     aspect-ratio: 1;
     border-radius: inherit;
-    height: 4rem;
+    height: 2vh;
+    width: 2vh;
+    @media screen and (min-width: 1024px) {
+      height: 4.5rem;
+      width: 4.5rem;
+    }
   }
 }

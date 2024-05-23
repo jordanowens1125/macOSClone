@@ -1,5 +1,5 @@
 nav {
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   width: 100vw;
   justify-content: space-between;
@@ -9,6 +9,8 @@ nav {
   font-size: 14px;
   color: #fff;
   top: 0;
+  position: absolute;
+  left: 0!important;
   .left {
     p {
       padding-left: 4px;

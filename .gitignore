@@ -2,27 +2,28 @@
 
 https://www.macos-web.app/
 https://gianlucajahn.github.io/macOS-react/
+https://github.com/harish-sethuraman/macos-clone
+
 
 -animations
 -light mode/dark mode
--Windows - Apps
-    white dot when app is open or active
-    moving/dragging apps
-        prevent them from being drug off screen
+-Windows - Apps 
     functionality
         calendar
         calculator
         weather app
 -Loading screen
 -Scroll styling
-
+-on right click make dropdown appear
+-Styling
 
 Later
--vscode???
+-vscode app???
 -wallpapers
         - Add dark/light mode for each image
 -When i click on element change z index to higher than all else??
 -notch toggle
+-make windows draggable without react draggable
  
 
 

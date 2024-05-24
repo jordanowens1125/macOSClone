@@ -2,6 +2,10 @@
   top: 10%;
   height: 37.5rem;
   width: 50rem;
+  .header {
+    border-bottom: 1px var(--border-color) solid;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
   img {
     width: 100%;
     height: unset;

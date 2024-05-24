@@ -1,6 +1,7 @@
 "use client";
 import DivideSvgComponent from "../icons/divide";
 import MultiplySvgComponent from "../icons/multiply";
+import PercentageSvgComponent from "../icons/percentage";
 import PlusMinusSvgComponent from "../icons/plusminus";
 import "./calculator.scss";
 import Windowcomponent from "./window";
@@ -21,15 +22,15 @@ export default function Calculator({ index, setIndex, close }) {
             <PlusMinusSvgComponent />
           </button>
           <button className="top-row">
-            <DivideSvgComponent />
+            <PercentageSvgComponent />
           </button>
           <button className="right-col">
-            <MultiplySvgComponent />
+            <DivideSvgComponent />
           </button>
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button className="right-col">&times;</button>
+          <button className="right-col">&#215;</button>
           <button>4</button>
           <button>5</button>
           <button>6</button>

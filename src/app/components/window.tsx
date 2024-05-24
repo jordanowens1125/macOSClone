@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import "./window.scss";
+import CloseSvgComponent from "../icons/close";
+import MinusSvgComponent from "../icons/minus";
+import ExpandSvgComponent from "../icons/expand";
 export default function Windowcomponent({
   Component,
   header,
@@ -64,7 +67,7 @@ export default function Windowcomponent({
         }
       >
         <div
-          className={full ? `window ${classname} full` : `window ${classname}`}
+          className={full ? ` ${classname} window full` : `${classname} window`}
         >
           <div
             className="header"
@@ -75,9 +78,9 @@ export default function Windowcomponent({
             onDragStart={onDragStart}
           >
             <div className="actions">
-              <button onClick={close}>Red</button>
-              <button>Yellow</button>
-              <button onClick={() => setFull(!full)}>Green</button>
+              <button onClick={close}><CloseSvgComponent/></button>
+              <button><MinusSvgComponent/></button>
+              <button onClick={() => setFull(!full)}><ExpandSvgComponent/></button>
             </div>
             <p>{header}</p>
           </div>

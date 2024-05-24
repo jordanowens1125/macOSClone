@@ -1,7 +1,10 @@
+"use client";
+import { useState } from "react";
 import Apps from "./components/apps";
-import Nav from "./components/nav"
+import Nav from "./components/nav";
 
 export default function Home() {
+  const [showWallpaper, setShowWallpaper] = useState(false);
   return (
     <main>
       <img
@@ -10,9 +13,12 @@ export default function Home() {
         className="background"
         id="background"
       />
-      <Nav />
+      <Nav openWallPaper={() => setShowWallpaper(true)} />
       <div className="bottom" id="bottom">
-        <Apps />
+        <Apps
+          showWallpaper={showWallpaper}
+          setShowWallpaper={setShowWallpaper}
+        />
       </div>
     </main>
   );

@@ -1,9 +1,17 @@
 "use client";
+import { useEffect, useState } from "react";
 import SYSTEMCOLORS from "../constants/systemColors";
 import "./nav.scss";
+import AppleSvgComponent from "../icons/apple";
+import SliderSvgComponent from "../icons/slider";
+import DarkSvgComponent from "../icons/darkmode";
+import AnimationSvgComponent from "../icons/animations";
+import NotchSvgComponent from "../icons/notch";
 
-export default function Nav() {
-  const changeSettingsColor = (color:string) => {
+export default function Nav({ openWallPaper }) {
+  let [time, setTime] = useState(new Date());
+
+  const changeSettingsColor = (color: string) => {
     document.documentElement.style.setProperty(
       "--system-color",
       `hsl(${color})`
@@ -13,7 +21,7 @@ export default function Nav() {
     <nav>
       <div className="left">
         <div className="nav-item">
-          <p>SVG</p>
+          <AppleSvgComponent />
           <div className="dropdown">
             <p className="b-bottom">About this mac</p>
             <p>System Preferences..</p>
@@ -30,16 +38,12 @@ export default function Nav() {
         <div className="nav-item">
           <p>Finder</p>
           <div className="dropdown">
-            <p className="b-bottom">About this mac</p>
-            <p>System Preferences..</p>
-            <p className="b-bottom">App Store...</p>
-            <p className="b-bottom">Recent Items</p>
-            <p className="b-bottom">Force Quit...</p>
-            <p>Sleep</p>
-            <p>Restart...</p>
-            <p className="b-bottom">Shut Down...</p>
-            <p>Lock Screen</p>
-            <p>Log Out User</p>
+            <p className="b-bottom">About Finder</p>
+            <p className="b-bottom">Preferences</p>
+            <p className="b-bottom">Empty Trash</p>
+            <p>Hide Finder</p>
+            <p>Hide Others</p>
+            <p className="disabled">Show All</p>
           </div>
         </div>
         <div className="nav-item">
@@ -120,14 +124,14 @@ export default function Nav() {
       </div>
       <div className="right">
         <div className="nav-item">
-          <p>Slide</p>
+          <SliderSvgComponent />
           <div className="dropdown">
             <button>
-              svg
+              <DarkSvgComponent />
               <p className="item-header">Dark mode</p>
             </button>
             <button>
-              svg
+              <AnimationSvgComponent />
               <p className="item-header">Animations</p>
             </button>
             <span className="system-color">
@@ -145,7 +149,7 @@ export default function Nav() {
               </span>
             </span>
 
-            <div className="background-img">
+            <div className="background-img" onClick={openWallPaper}>
               <img
                 src="https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp"
                 alt=""
@@ -157,12 +161,17 @@ export default function Nav() {
               </span>
             </div>
             <button className="notch">
-              svg
+              <NotchSvgComponent />
               <p className="item-h">Notch</p>
             </button>
           </div>
         </div>
-        <div className="time">Sat May 18 11:59 AM</div>
+        <div className="time">
+          {time.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </div>
       </div>
     </nav>
   );

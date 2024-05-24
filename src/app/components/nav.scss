@@ -10,7 +10,12 @@ nav {
   color: #fff;
   top: 0;
   position: absolute;
-  left: 0!important;
+  left: 0 !important;
+  svg {
+    height: 1rem;
+    width:1rem;
+    fill: #fff;
+  }
   .left {
     p {
       padding-left: 4px;
@@ -66,15 +71,19 @@ nav {
     align-items: center;
   }
   .right {
+    position: relative;
+    svg{
+      height: 1rem;
+    }
     .nav-item {
+      position: relative;
       &:hover {
         .dropdown {
           display: grid;
         }
       }
       .dropdown {
-        left: -250%;
-        right: 0;
+        left: -500%;
         display: none;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -131,6 +140,9 @@ nav {
           padding: 16px;
           gap: 10px;
           background-color: var(--system-bg-2);
+          &:hover {
+            cursor: pointer;
+          }
           * {
             grid-column: span 1;
             display: flex;

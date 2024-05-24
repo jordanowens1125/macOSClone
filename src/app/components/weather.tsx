@@ -1,7 +1,15 @@
+"use client";
+import { useState } from "react";
 import "./weather.scss";
 import Windowcomponent from "./window";
+// import getDataByCity from "../helper/weather";
 
 export default function Weather({ index, setIndex, close }) {
+  // const [input, setInput] = useState("");
+  // const [searching, setSearching] = useState(false);
+  // const [error, setError] = useState(null);
+  // const data = await getDataByCity();
+
   return (
     <Windowcomponent
       header={"Weather"}

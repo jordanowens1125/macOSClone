@@ -6,21 +6,19 @@ https://github.com/harish-sethuraman/macos-clone
 
 
 -animations
-        Apps
--light mode/dark mode
--Windows - Apps 
-    functionality
-        calculator
-        weather app
-        date on navbar
+        Apps hover animations
+functionality
+        date on navbar that changes time
+        navbar toggle
 -Loading screen
--Scroll styling
 -on right click make dropdown appear
 -Styling
-        Header on Windows
-        calculator
-        calendar
         on window drag change cursor image
+        Scrollbar app styling
+        Actual navbar elements
+        Icons
+                top right dropdown
+                calendar
 
 Later
 -vscode app???
@@ -28,7 +26,8 @@ Later
         - Add dark/light mode for each image
 -When i click on element change z index to higher than all else??
 -notch toggle
- 
+-weather app
+-light mode/dark mode
 
 
 
@@ -59,6 +58,8 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+.env*
 
 # vercel
 .vercel

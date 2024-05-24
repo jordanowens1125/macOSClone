@@ -6,11 +6,15 @@
   --textColor: #fff;
   --radius: 12px;
   --bg-img: url("https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp");
-  --window-bg-color: #1a1515;
-  --calculator-bg-color: #454545b3;
+  --window-bg-color: #1b1b1d;
+  --calculator-bg-color: #3f3f49;
   --calculator-orange: #f1a03b;
   --calculator-button-color: #73737399;
-  --calculator-top-row-color: #59595999;
+  --calculator-top-row-color: #4d4d51;
+  --calendar-grey: #424242;
+  --app-red: #ff5f56;
+  --app-yellow: #ffbd2e;
+  --app-green: #27c93f;
 }
 * {
   margin: 0;
@@ -64,3 +68,6 @@ img {
   width: 100%;
 }
 
+button {
+  border: none;
+}

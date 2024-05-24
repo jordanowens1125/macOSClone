@@ -11,12 +11,11 @@ const CALENDAR = "apps-imgs/4.webp";
 const CALCULATOR = "apps-imgs/3.webp";
 const WEATHER = "apps-imgs/6.png";
 
-export default function Apps() {
+export default function Apps({ showWallpaper, setShowWallpaper }) {
   const [index, setIndex] = useState(1);
-  const [showWallpaper, setShowWallpaper] = useState(false);
   const [showCalendar, setShowCalendar] = useState(true);
   const [showCalculator, setShowCalculator] = useState(false);
-  const [showWeather, setShowWeather] = useState(false);
+  const [showWeather, setShowWeather] = useState(true);
   return (
     <>
       <div className="container">
@@ -53,10 +52,15 @@ export default function Apps() {
             {showCalendar && <div></div>}
           </span>
 
-          <span className="">
+          {/* <span className="">
             <p>{"Weather"}</p>
             <img src={WEATHER} alt="" onClick={() => setShowWeather(true)} />
             {showWeather && <div></div>}
+          </span>*/}
+          <span className="">
+            <p>{"Weather"}</p>
+            <img src={WEATHER} alt="" draggable="false" />
+            <div></div>
           </span>
 
           <span className="b-left">
@@ -98,13 +102,13 @@ export default function Apps() {
           close={() => setShowCalendar(false)}
         />
       )}
-      {showWeather && (
+      {/* {showWeather && (
         <Weather
           index={index}
           setIndex={setIndex}
           close={() => setShowWeather(false)}
         />
-      )}
+      )} */}
     </>
   );
 }

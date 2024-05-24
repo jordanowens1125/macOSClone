@@ -11,7 +11,7 @@ import {
 export default function Calendar({ index, setIndex, close }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [dates, setDates] = useState(getMonthDates(currentDate));
-  console.log(dates);
+  
   const prevMonth = () => {
     let newDate = getLastMonthEndDate(currentDate);
     setCurrentDate(newDate);

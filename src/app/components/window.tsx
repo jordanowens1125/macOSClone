@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { MouseEventHandler, ReactNode, useState } from "react";
 import "./window.scss";
 import CloseSvgComponent from "../icons/close";
 import MinusSvgComponent from "../icons/minus";
@@ -10,14 +10,22 @@ export default function Windowcomponent({
   index,
   classname,
   close,
+  setIndex,
+}: {
+  Component: ReactNode;
+  header: string;
+  index: number;
+  classname: string;
+  close: MouseEventHandler;
+  setIndex: Function;
 }) {
   const [full, setFull] = useState(false);
   const [diffPos, setDiffPos] = useState({ diffX: "30%", diffY: "15%" });
 
-  const onDragStart = (ev) => {
-    var hideDragImage = ev.target.cloneNode(true);
+  const onDragStart = (ev: React.DragEvent) => {
+    var hideDragImage = (ev.currentTarget).cloneNode(true) as HTMLImageElement;
     hideDragImage.id = "hideDragImage-hide";
-    var dragImage = ev.target.cloneNode(true);
+    var dragImage = ev.currentTarget.cloneNode(true) as HTMLImageElement;
     dragImage.id = "draggeimage";
     dragImage.style.display = "none";
     hideDragImage.style.display = "none";
@@ -26,27 +34,27 @@ export default function Windowcomponent({
     ev.dataTransfer.setDragImage(hideDragImage, 0, 0);
   };
 
-  const onDragEnd = (ev: DragEvent<HTMLDivElement>) => {
+  const onDragEnd = (ev: React.DragEvent<HTMLDivElement>) => {
     const keepMiddleWidth =
-      document.getElementById(classname).getBoundingClientRect().width / 2;
+      document.getElementById(classname)!.getBoundingClientRect().width / 2;
 
-    let x = ev.pageX - keepMiddleWidth + "px";
+    let x = ev.pageX - keepMiddleWidth;
     let y = ev.pageY + "px";
     if (x > -keepMiddleWidth && x < window.innerWidth + keepMiddleWidth) {
       setDiffPos({ diffX: x + "px", diffY: y + "px" });
     }
     var hideDragImage = document.getElementById("hideDragImage-hide");
     var dragImage = document.getElementById("draggeimage");
-    hideDragImage.remove();
-    dragImage.remove();
+    hideDragImage!.remove();
+    dragImage!.remove();
   };
 
-  const onDrag = (ev: DragEvent<HTMLDivElement>) => {
+  const onDrag = (ev: React.DragEvent<HTMLDivElement>) => {
     var dragImage = document.getElementById("draggeimage");
 
     if (dragImage) {
       const keepMiddleWidth =
-        document.getElementById(classname).getBoundingClientRect().width / 2;
+        document.getElementById(classname)!.getBoundingClientRect().width / 2;
       let x = ev.pageX - keepMiddleWidth;
       let y = ev.pageY;
       if (x > -keepMiddleWidth && x < window.innerWidth + keepMiddleWidth) {
@@ -78,9 +86,15 @@ export default function Windowcomponent({
             onDragStart={onDragStart}
           >
             <div className="actions">
-              <button onClick={close}><CloseSvgComponent/></button>
-              <button><MinusSvgComponent/></button>
-              <button onClick={() => setFull(!full)}><ExpandSvgComponent/></button>
+              <button onClick={close}>
+                <CloseSvgComponent />
+              </button>
+              <button>
+                <MinusSvgComponent />
+              </button>
+              <button onClick={() => setFull(!full)}>
+                <ExpandSvgComponent />
+              </button>
             </div>
             <p>{header}</p>
           </div>

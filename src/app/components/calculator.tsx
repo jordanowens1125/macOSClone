@@ -1,4 +1,5 @@
 "use client";
+import { MouseEventHandler } from "react";
 import DivideSvgComponent from "../icons/divide";
 import MultiplySvgComponent from "../icons/multiply";
 import PercentageSvgComponent from "../icons/percentage";
@@ -6,7 +7,15 @@ import PlusMinusSvgComponent from "../icons/plusminus";
 import "./calculator.scss";
 import Windowcomponent from "./window";
 
-export default function Calculator({ index, setIndex, close }) {
+export default function Calculator({
+  index,
+  setIndex,
+  close,
+}: {
+  index: number;
+  setIndex: Function;
+  close: MouseEventHandler;
+}) {
   return (
     <Windowcomponent
       header={"Calculator"}

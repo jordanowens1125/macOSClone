@@ -11,7 +11,13 @@ const CALENDAR = "apps-imgs/4.webp";
 const CALCULATOR = "apps-imgs/3.webp";
 const WEATHER = "apps-imgs/6.png";
 
-export default function Apps({ showWallpaper, setShowWallpaper }) {
+export default function Apps({
+  showWallpaper,
+  setShowWallpaper,
+}: {
+  showWallpaper: Boolean;
+  setShowWallpaper: Function;
+}) {
   const [index, setIndex] = useState(1);
   const [showCalendar, setShowCalendar] = useState(true);
   const [showCalculator, setShowCalculator] = useState(false);

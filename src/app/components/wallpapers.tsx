@@ -1,15 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { DYNAMICBACKGROUNDS } from "../constants/backgrounds";
 import "./wallpapers.scss";
 import Windowcomponent from "./window";
 
-export default function Wallpaper({ index, setIndex, close }) {
+export default function Wallpaper({
+  index,
+  setIndex,
+  close,
+}: {
+  index: number;
+  setIndex: Function;
+  close: MouseEventHandler;
+}) {
   const [current, setCurrent] = useState(DYNAMICBACKGROUNDS[8]);
-  const setImage = (bg) => {
-    const bgEl = document.getElementById("background");
-    bgEl.src = bg.image;
+  const setImage = (bg: { image: string; name: string; type: string }) => {
+    const bgEl = document.getElementById("background")!;
+    bgEl.setAttribute("src", bg.image);
     setCurrent(bg);
   };
   return (

@@ -1,5 +1,5 @@
-const DarkSvgComponent = (props) => (
-  <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" {...props}>
+const DarkSvgComponent = () => (
+  <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" >
     <g fill="currentColor">
       <path d="M12 16a4 4 0 0 0 0-8z" />
       <path

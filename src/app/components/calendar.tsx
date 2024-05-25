@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import "./calendar.scss";
 import Windowcomponent from "./window";
 import {
@@ -8,10 +8,18 @@ import {
   getNextMonthDate,
 } from "../helper/dates";
 
-export default function Calendar({ index, setIndex, close }) {
+export default function Calendar({
+  index,
+  setIndex,
+  close,
+}: {
+  index: number;
+  setIndex: Function;
+  close: MouseEventHandler;
+}) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [dates, setDates] = useState(getMonthDates(currentDate));
-  
+
   const prevMonth = () => {
     let newDate = getLastMonthEndDate(currentDate);
     setCurrentDate(newDate);
@@ -64,7 +72,9 @@ export default function Calendar({ index, setIndex, close }) {
                     className={date.today ? "current date" : "date"}
                     key={`${date.date} ${date.month}`}
                   >
-                    <span className={date.activeMonth ? "active" : ""}>{date.date}</span>
+                    <span className={date.activeMonth ? "active" : ""}>
+                      {date.date}
+                    </span>
                   </div>
                 );
               })}

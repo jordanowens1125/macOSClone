@@ -1,4 +1,4 @@
-const getMonthDates = (date) => {
+const getMonthDates = (date: Date) => {
   const startDate = getStartDateOfTheWeekMonthStarts(date);
   const dates = [];
   let today = new Date();
@@ -20,21 +20,21 @@ const getMonthDates = (date) => {
   return dates;
 };
 
-const getLastMonthEndDate = (currentDate) => {
+const getLastMonthEndDate = (currentDate: Date) => {
   const date = new Date(currentDate);
   date.setDate(0);
   date.setHours(12, 0, 0, 0);
   return date;
 };
 
-const getNextMonthDate = (currentDate) => {
+const getNextMonthDate = (currentDate: Date) => {
   const date = new Date(currentDate);
   date.setMonth(date.getMonth() + 1, 1);
   date.setHours(12, 0, 0, 0);
   return date;
 };
 
-const getStartDateOfTheWeekMonthStarts = (currentDate) => {
+const getStartDateOfTheWeekMonthStarts = (currentDate: Date) => {
   let today = new Date(currentDate);
   today.setFullYear(today.getFullYear(), today.getMonth(), 1); // 1 January, 14
   const firstDay = new Date(
@@ -43,7 +43,7 @@ const getStartDateOfTheWeekMonthStarts = (currentDate) => {
     1
   );
 
-  function startOfWeek(date) {
+  function startOfWeek(date: Date) {
     // Calculate the difference between the date's day of the month and its day of the week
     var diff = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
 

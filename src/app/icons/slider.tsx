@@ -1,4 +1,4 @@
-const SliderSvgComponent = (stroke = "currentColor", fill = "currentColor") => (
+const SliderSvgComponent = ({ stroke = "currentColor", fill = "currentColor" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill={fill} viewBox="0 0 351 348">
     <path
       stroke={stroke}

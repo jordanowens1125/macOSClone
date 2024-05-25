@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import SYSTEMCOLORS from "../constants/systemColors";
 import "./nav.scss";
 import AppleSvgComponent from "../icons/apple";
@@ -8,7 +8,7 @@ import DarkSvgComponent from "../icons/darkmode";
 import AnimationSvgComponent from "../icons/animations";
 import NotchSvgComponent from "../icons/notch";
 
-export default function Nav({ openWallPaper }) {
+export default function Nav({ openWallPaper }: { openWallPaper: MouseEventHandler }) {
   let [time, setTime] = useState(new Date());
 
   const changeSettingsColor = (color: string) => {
@@ -141,7 +141,7 @@ export default function Nav({ openWallPaper }) {
                   return (
                     <div
                       key={color}
-                      style={{ "--color": `${color}` }}
+                      style={{ ["--color" as string]: `${color}`}}
                       onClick={() => changeSettingsColor(color)}
                     ></div>
                   );

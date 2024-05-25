@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 
 https://www.macos-web.app/
 https://gianlucajahn.github.io/macOS-react/
@@ -64,6 +64,3 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts

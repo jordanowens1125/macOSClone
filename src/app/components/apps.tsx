@@ -19,9 +19,9 @@ export default function Apps({
   setShowWallpaper: Function;
 }) {
   const [index, setIndex] = useState(1);
-  const [showCalendar, setShowCalendar] = useState(true);
+  const [showCalendar, setShowCalendar] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
-  const [showWeather, setShowWeather] = useState(true);
+  const [showWeather, setShowWeather] = useState(false);
   return (
     <>
       <div className="container">

@@ -38,6 +38,7 @@ export default function Apps({
               src={WALLPAPERS}
               alt=""
               onClick={() => setShowWallpaper(true)}
+              draggable="false"
             />
             {showWallpaper && <div></div>}
           </span>
@@ -48,13 +49,19 @@ export default function Apps({
               src={CALCULATOR}
               alt=""
               onClick={() => setShowCalculator(true)}
+              draggable="false"
             />
             {showCalculator && <div></div>}
           </span>
 
           <span className="">
             <p>{"Calendar"}</p>
-            <img src={CALENDAR} alt="" onClick={() => setShowCalendar(true)} />
+            <img
+              src={CALENDAR}
+              alt=""
+              onClick={() => setShowCalendar(true)}
+              draggable="false"
+            />
             {showCalendar && <div></div>}
           </span>
 
@@ -69,18 +76,18 @@ export default function Apps({
             <div></div>
           </span>
           <div className="divider"></div>
-          <span >
+          <a href="https://code.visualstudio.com/" target="_blank">
             <p>VSCode</p>
             <img src="apps-imgs/5.webp" alt="" draggable="false" />
             <div></div>
-          </span>
-          <span>
+          </a>
+          <a href="https://github.com/jordanowens1125" target="_blank">
             <p>Github</p>
             <img src="apps-imgs/7.webp" alt="" draggable="false" />
             <div></div>
-          </span>
+          </a>
           <div className="divider"></div>
-          <span >
+          <span>
             <p>App Store</p>
             <img src="apps-imgs/8.webp" alt="" draggable="false" />
             <div></div>

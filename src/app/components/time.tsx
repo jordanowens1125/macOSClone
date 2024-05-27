@@ -11,7 +11,8 @@ export default function TimeTracker() {
 
     var date = d.toLocaleDateString();
     const time = d.toLocaleTimeString();
-    document!.getElementById("time").innerHTML = `${date} ${time}`;
+    const timeEl = document.getElementById('time')
+    timeEl!.innerHTML = `${date} ${time}`;
 
     setTimeout(displayClock, syncedTimeout);
   }

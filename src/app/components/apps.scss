@@ -29,7 +29,7 @@
     width: 1px;
     background-color: var(--border-color);
   }
-  span {
+  span,a {
     position: relative;
     display: grid;
     grid-template-rows: auto 4px;

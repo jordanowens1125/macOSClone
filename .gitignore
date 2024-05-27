@@ -4,19 +4,14 @@ https://github.com/harish-sethuraman/macos-clone
 
 
 functionality
-        navbar 
         custom contextmenu - right click
                 -on right click make dropdown appear
                 -prevent right click on load up
 -Styling
-        Scrollbar app styling
-        Actual navbar elements
         Icons
                 top right dropdown
-                calendar
-                        left
-                        right
                 Checkmark on active color
+        Load images in faster
 
 Later
 -vscode app???

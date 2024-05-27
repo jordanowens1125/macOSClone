@@ -1,7 +1,7 @@
 :root {
   --system-bg: hsla(240, 4%, 11%, 0.3);
   --system-bg-2: hsla(240, 4%, 11%, 0.6);
-  --system-color: red;
+  --system-color: hsla(210, 100%, 52%);
   --border-color: rgba(255, 255, 255, 0.308);
   --textColor: #fff;
   --radius: 12px;
@@ -25,12 +25,20 @@
 html {
   overflow: hidden;
 }
+
+
+
 body {
   position: relative;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  cursor: url("../../public/cursors/cursor.png"), auto;
+  * {
+    cursor: url("../../public/cursors/cursor.png"), auto;
+  }
+
+
+
   main {
     max-height: 100vh;
     height: 100vh;

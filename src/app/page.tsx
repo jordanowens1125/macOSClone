@@ -6,11 +6,11 @@ import Loader from "./components/loader";
 
 export default function Home() {
   const [showWallpaper, setShowWallpaper] = useState(false);
-  window.onload = () => {
-    document.body.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-  };
+  // window.onload = () => {
+  //   document.body.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault();
+  //   });
+  // };
   return (
     <main>
       <img

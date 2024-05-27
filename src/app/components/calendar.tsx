@@ -7,6 +7,8 @@ import {
   getMonthDates,
   getNextMonthDate,
 } from "../helper/dates";
+import LeftSvgComponent from "../icons/left";
+import RightSvgComponent from "../icons/right";
 
 export default function Calendar({
   index,
@@ -49,9 +51,13 @@ export default function Calendar({
               month: "long",
             })} ${currentDate.getFullYear()}`}</b>
             <div className="calendar-actions">
-              <button onClick={prevMonth}>Left</button>
+              <button onClick={prevMonth}>
+                <LeftSvgComponent />
+              </button>
               <button onClick={handleToday}>Today</button>
-              <button onClick={nextMonth}>Right</button>
+              <button onClick={nextMonth}>
+                <RightSvgComponent />
+              </button>
             </div>
           </span>
           <div className="bottom-calendar">

@@ -69,7 +69,9 @@ export default function Calendar({
               {dates.map((date) => {
                 return (
                   <div
-                    className={date.today ? "current date" : "date"}
+                    className={
+                      date.today && date.activeMonth ? "current date" : "date"
+                    }
                     key={`${date.date} ${date.month}`}
                   >
                     <span className={date.activeMonth ? "active" : ""}>

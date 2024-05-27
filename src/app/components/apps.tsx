@@ -31,7 +31,7 @@ export default function Apps({
             <img src="apps-imgs/1.webp" alt="" draggable="false" />
             <div></div>
           </span>
-
+          <div className="divider"></div>
           <span className="">
             <p>{"Wallpaper"}</p>
             <img
@@ -68,8 +68,8 @@ export default function Apps({
             <img src={WEATHER} alt="" draggable="false" />
             <div></div>
           </span>
-
-          <span className="b-left">
+          <div className="divider"></div>
+          <span >
             <p>VSCode</p>
             <img src="apps-imgs/5.webp" alt="" draggable="false" />
             <div></div>
@@ -79,7 +79,8 @@ export default function Apps({
             <img src="apps-imgs/7.webp" alt="" draggable="false" />
             <div></div>
           </span>
-          <span className="b-left">
+          <div className="divider"></div>
+          <span >
             <p>App Store</p>
             <img src="apps-imgs/8.webp" alt="" draggable="false" />
             <div></div>

@@ -7,9 +7,13 @@ import SliderSvgComponent from "../icons/slider";
 import DarkSvgComponent from "../icons/darkmode";
 import AnimationSvgComponent from "../icons/animations";
 import NotchSvgComponent from "../icons/notch";
+import TimeTracker from "./time";
 
-export default function Nav({ openWallPaper }: { openWallPaper: MouseEventHandler }) {
-  let [time, setTime] = useState(new Date());
+export default function Nav({
+  openWallPaper,
+}: {
+  openWallPaper: MouseEventHandler;
+}) {
 
   const changeSettingsColor = (color: string) => {
     document.documentElement.style.setProperty(
@@ -141,7 +145,7 @@ export default function Nav({ openWallPaper }: { openWallPaper: MouseEventHandle
                   return (
                     <div
                       key={color}
-                      style={{ ["--color" as string]: `${color}`}}
+                      style={{ ["--color" as string]: `${color}` }}
                       onClick={() => changeSettingsColor(color)}
                     ></div>
                   );
@@ -166,12 +170,7 @@ export default function Nav({ openWallPaper }: { openWallPaper: MouseEventHandle
             </button>
           </div>
         </div>
-        <div className="time">
-          {time.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </div>
+        <TimeTracker />
       </div>
     </nav>
   );

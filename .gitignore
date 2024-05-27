@@ -3,15 +3,12 @@ https://gianlucajahn.github.io/macOS-react/
 https://github.com/harish-sethuraman/macos-clone
 
 
--animations
-        Apps hover animations
 functionality
-        date on navbar that changes time
-        navbar toggle
--on right click make dropdown appear
--prevent right click on load up
+        navbar 
+        custom contextmenu - right click
+                -on right click make dropdown appear
+                -prevent right click on load up
 -Styling
-        on window drag change cursor image
         Scrollbar app styling
         Actual navbar elements
         Icons

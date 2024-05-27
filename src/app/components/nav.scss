@@ -13,7 +13,7 @@ nav {
   left: 0 !important;
   svg {
     height: 1rem;
-    width:1rem;
+    width: 1rem;
     fill: #fff;
   }
   .left {
@@ -72,7 +72,10 @@ nav {
   }
   .right {
     position: relative;
-    svg{
+    #time {
+      width: 10rem;
+    }
+    svg {
       height: 1rem;
     }
     .nav-item {

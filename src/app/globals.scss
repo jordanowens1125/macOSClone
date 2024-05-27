@@ -26,8 +26,6 @@ html {
   overflow: hidden;
 }
 
-
-
 body {
   position: relative;
   height: 100%;
@@ -35,9 +33,9 @@ body {
   overflow: hidden;
   * {
     cursor: url("../../public/cursors/cursor.png"), auto;
+    user-select: none;
+    -moz-user-select: none;
   }
-
-
 
   main {
     max-height: 100vh;
@@ -79,4 +77,5 @@ img {
 
 button {
   border: none;
+  outline: none;
 }

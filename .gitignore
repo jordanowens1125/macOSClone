@@ -4,21 +4,21 @@ https://github.com/harish-sethuraman/macos-clone
 
 
 functionality
-        custom contextmenu - right click
-                -on right click make dropdown appear
-                -prevent right click on load up
 -Styling
-        Icons
-                top right dropdown
-                Checkmark on active color
         Load images in faster
 
 Later
 -vscode app???
 -wallpapers
         - Add dark/light mode for each image
+-Prevent context menu on loader screen
+-Styling       
+        - dragging cursor image - mickey mouse looking glove hand
+-settings toggles
+        -notch
+        -dark mode
+        -animations
 -When i click on element change z index to higher than all else??
--notch toggle
 -weather app
 -light mode/dark mode
 

@@ -1,18 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Apps from "./components/apps";
 import Nav from "./components/nav";
 import Loader from "./components/loader";
 
 export default function Home() {
   const [showWallpaper, setShowWallpaper] = useState(false);
-  // window.onload = () => {
-  //   document.body.addEventListener("contextmenu", (e) => {
-  //     e.preventDefault();
-  //   });
-  // };
+
+  // useEffect(() => {
+  //   window.onload = () => {
+  //     console.log(1);
+      
+  //     document.body.addEventListener("contextmenu", (e) => {
+  //       return false;
+  //     });
+  //   };
+  // }, []);
+  const handleLoad = () => {
+    console.log(1);
+    
+  }
   return (
-    <main>
+    <main onLoad={handleLoad}>
       <img
         src="https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp"
         alt=""
@@ -26,7 +35,7 @@ export default function Home() {
           setShowWallpaper={setShowWallpaper}
         />
       </div>
-      {/* <Loader /> */}
+      <Loader />
     </main>
   );
 }

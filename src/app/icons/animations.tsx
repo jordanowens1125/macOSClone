@@ -1,5 +1,5 @@
 const AnimationSvgComponent = () => (
-  <svg width="1.2em" height="1.2em" viewBox="0 0 24 24">
+  <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" >
     <path
       fill="currentColor"
       stroke="currentColor"

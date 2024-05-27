@@ -13,7 +13,7 @@ export default function NavSettingsItem({
 }: {
   openWallPaper: MouseEventHandler;
 }) {
-  const [showDropdown, setShowDropdown] = useState(true);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [selectedColor, setColor] = useState(`hsla(210,100%,52%)`);
 
   const handleClick = () => {
@@ -49,11 +49,17 @@ export default function NavSettingsItem({
         id="settings-dropdown"
       >
         <button>
-          <DarkSvgComponent />
+          <span>
+            <DarkSvgComponent />
+          </span>
+
           <p className="item-header">Dark mode</p>
         </button>
         <button>
-          <AnimationSvgComponent />
+          <span>
+            <AnimationSvgComponent />
+          </span>
+
           <p className="item-header">Animations</p>
         </button>
         <span className="system-color">
@@ -67,7 +73,11 @@ export default function NavSettingsItem({
                   onClick={() => changeSettingsColor(color)}
                   className="color"
                 >
-                  {`hsla(${color})` === selectedColor && <CheckSvgComponent/>}
+                  {`hsla(${color})` === selectedColor && (
+                    <span>
+                      <CheckSvgComponent />
+                    </span>
+                  )}
                 </div>
               );
             })}
@@ -86,7 +96,10 @@ export default function NavSettingsItem({
           </span>
         </div>
         <button className="notch">
-          <NotchSvgComponent />
+          <span>
+            <NotchSvgComponent />
+          </span>
+
           <p className="item-h">Notch</p>
         </button>
       </div>

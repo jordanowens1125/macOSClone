@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Apps from "./components/apps";
 import Nav from "./components/nav";
+import Loader from "./components/loader";
 
 export default function Home() {
   const [showWallpaper, setShowWallpaper] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
           setShowWallpaper={setShowWallpaper}
         />
       </div>
+      <Loader />
     </main>
   );
 }

@@ -1,5 +1,3 @@
-
-
 https://www.macos-web.app/
 https://gianlucajahn.github.io/macOS-react/
 https://github.com/harish-sethuraman/macos-clone
@@ -10,7 +8,6 @@ https://github.com/harish-sethuraman/macos-clone
 functionality
         date on navbar that changes time
         navbar toggle
--Loading screen
 -on right click make dropdown appear
 -Styling
         on window drag change cursor image
@@ -19,6 +16,9 @@ functionality
         Icons
                 top right dropdown
                 calendar
+                        left
+                        right
+                Checkmark on active color
 
 Later
 -vscode app???

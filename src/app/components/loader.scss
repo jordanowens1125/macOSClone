@@ -1,0 +1,50 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  z-index: 9999;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: 0.2s;
+  cursor: none;
+  pointer-events: none;
+  &.hide {
+    opacity: 0;
+    z-index: -9999;
+  }
+  svg {
+    height: 4rem;
+    width: 4rem;
+  }
+  .load-bar {
+    width: 150px;
+    height: 4px;
+    background-color: #424242;
+    border-radius: 1rem;
+    display: flex;
+    overflow: hidden;
+    .fill {
+      background-color: #fff;
+      height: 100%;
+      animation-name: load;
+      animation-duration: 2.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -14,7 +14,7 @@ export default function Loader() {
   setTimeout(() => {
     hideLoader();
   }, 3000);
-  const handleClick = (e) => {
+  const handleClick = (e:any) => {
     e.preventDefault();
   };
   return (

@@ -9,6 +9,7 @@ functionality
         date on navbar that changes time
         navbar toggle
 -on right click make dropdown appear
+-prevent right click on load up
 -Styling
         on window drag change cursor image
         Scrollbar app styling

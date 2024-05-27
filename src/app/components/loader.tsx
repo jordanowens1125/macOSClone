@@ -9,6 +9,7 @@ export default function Loader() {
     audio.volume = 0.2;
     audio.play().catch(function (error) {
       console.log("Chrome cannot play sound without user interaction first");
+      return
     });
   };
   setTimeout(() => {

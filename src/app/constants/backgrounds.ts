@@ -16,7 +16,7 @@ const DYNAMICBACKGROUNDS = [
   },
   {
     name: "Big Sur",
-    image: "backgrounds/dynamic/4.webp",
+    image: "backgrounds/dynamic/4.jpg",
     type: "Dynamic Wallpaper",
   },
   {

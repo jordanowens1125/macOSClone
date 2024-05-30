@@ -23,7 +23,7 @@ export default function Windowcomponent({
   const [diffPos, setDiffPos] = useState({ diffX: "30%", diffY: "15%" });
 
   const onDragStart = (ev: React.DragEvent) => {
-    var hideDragImage = (ev.currentTarget).cloneNode(true) as HTMLImageElement;
+    var hideDragImage = ev.currentTarget.cloneNode(true) as HTMLImageElement;
     hideDragImage.id = "hideDragImage-hide";
     var dragImage = ev.currentTarget.cloneNode(true) as HTMLImageElement;
     dragImage.id = "draggeimage";
@@ -39,7 +39,7 @@ export default function Windowcomponent({
       document.getElementById(classname)!.getBoundingClientRect().width / 2;
 
     let x = ev.pageX - keepMiddleWidth;
-    let y = ev.pageY + "px";
+    let y = ev.pageY;
     if (x > -keepMiddleWidth && x < window.innerWidth + keepMiddleWidth) {
       setDiffPos({ diffX: x + "px", diffY: y + "px" });
     }
@@ -62,6 +62,8 @@ export default function Windowcomponent({
       }
     }
   };
+
+  console.log(diffPos);
 
   return (
     <>

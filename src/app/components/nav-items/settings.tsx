@@ -89,6 +89,7 @@ export default function NavSettingsItem({
             src="https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp"
             alt=""
             draggable="false"
+            id="settings-img"
           />
           <span>
             <b>Peak</b>

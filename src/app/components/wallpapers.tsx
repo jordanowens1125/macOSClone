@@ -19,6 +19,8 @@ export default function Wallpaper({
   const setImage = (bg: { image: string; name: string; type: string }) => {
     const bgEl = document.getElementById("background")!;
     bgEl.setAttribute("src", bg.image);
+    const settingsBgEl = document.getElementById("settings-img")!;
+    settingsBgEl.setAttribute("src", bg.image);
     setCurrent(bg);
   };
   return (
@@ -47,8 +49,12 @@ export default function Wallpaper({
                         ? "wallpaper active"
                         : "wallpaper"
                     }
-                    key={bg.name}>
-                    <Image src={bg.image} alt={bg.name} onClick={() => setImage(bg)}
+                    key={bg.name}
+                  >
+                    <Image
+                      src={bg.image}
+                      alt={bg.name}
+                      onClick={() => setImage(bg)}
                       width={171}
                       height={171}
                     />

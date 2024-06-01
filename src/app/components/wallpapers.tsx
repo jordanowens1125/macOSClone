@@ -4,6 +4,7 @@ import { MouseEventHandler, useState } from "react";
 import { DYNAMICBACKGROUNDS } from "../constants/backgrounds";
 import "./wallpapers.scss";
 import Windowcomponent from "./window";
+import Image from "next/image";
 
 export default function Wallpaper({
   index,
@@ -46,12 +47,10 @@ export default function Wallpaper({
                         ? "wallpaper active"
                         : "wallpaper"
                     }
-                    key={bg.name}
-                  >
-                    <img
-                      src={bg.image}
-                      alt={bg.name}
-                      onClick={() => setImage(bg)}
+                    key={bg.name}>
+                    <Image src={bg.image} alt={bg.name} onClick={() => setImage(bg)}
+                      width={171}
+                      height={171}
                     />
                     <p>{bg.name}</p>
                   </div>

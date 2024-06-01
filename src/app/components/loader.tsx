@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import AppleSvgComponent from "../icons/apple";
 import "./loader.scss";
 export default function Loader() {
+  const [chime, setChime] = useState(true);
   const hideLoader = () => {
     const loader = document.getElementById("loader");
     loader!.classList.add("hide");
@@ -42,10 +46,13 @@ export default function Loader() {
     hideLoader();
     const audio = new Audio("AppleChime.mp3"); //https://www.youtube.com/watch?v=Z9w08Pov-yA
     audio.volume = 0.4;
-    audio.play().catch(function (error) {
-      console.log("Chrome cannot play sound without user interaction first");
-      return;
-    });
+    if (chime) {
+      audio.play().catch(function (error) {
+        console.log("Chrome cannot play sound without user interaction first");
+        return;
+      });
+      setChime(false);
+    }
   }, 3000);
   const handleClick = (e: any) => {
     return false;

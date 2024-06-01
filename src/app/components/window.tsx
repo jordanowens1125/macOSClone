@@ -63,7 +63,7 @@ export default function Windowcomponent({
     }
   };
 
-  console.log(diffPos);
+  // console.log(diffPos);
 
   return (
     <>

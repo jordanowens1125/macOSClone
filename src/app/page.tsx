@@ -6,22 +6,8 @@ import Loader from "./components/loader";
 
 export default function Home() {
   const [showWallpaper, setShowWallpaper] = useState(false);
-
-  // useEffect(() => {
-  //   window.onload = () => {
-  //     console.log(1);
-      
-  //     document.body.addEventListener("contextmenu", (e) => {
-  //       return false;
-  //     });
-  //   };
-  // }, []);
-  const handleLoad = () => {
-    console.log(1);
-    
-  }
   return (
-    <main onLoad={handleLoad}>
+    <main >
       <img
         src="https://www.macos-web.app/assets/peak-2-DfSFrbB9.webp"
         alt=""

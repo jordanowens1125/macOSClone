@@ -41,7 +41,7 @@ export default function Loader() {
   setTimeout(() => {
     hideLoader();
     const audio = new Audio("AppleChime.mp3"); //https://www.youtube.com/watch?v=Z9w08Pov-yA
-    audio.volume = 0.1;
+    audio.volume = 0.4;
     audio.play().catch(function (error) {
       console.log("Chrome cannot play sound without user interaction first");
       return;
